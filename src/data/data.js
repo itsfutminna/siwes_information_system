@@ -12,7 +12,7 @@ const staffProfile = [
   {
     name: "SIWES Cordinator",
     office: "SIWES Cordinator",
-    image: "/Director.jpeg",
+    image: "/cordinator-siwes.png",
   },
 ];
 
