@@ -36,7 +36,7 @@ export default function Main() {
               <img
                 src={profile.image}
                 alt="picture"
-                className="aspect-square h-22"
+                className="aspect-square h-22 rounded-full"
               />
               <p>{profile.name}</p>
               <p>{profile.office}</p>
