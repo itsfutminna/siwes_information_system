@@ -52,7 +52,7 @@ export default function Accordion() {
     setCurrentlyOpen(id === currentlyOpen ? null : id);
   }
   return (
-    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4  mr-2">
       <AccordionList
         title="General Performance"
         id={0}

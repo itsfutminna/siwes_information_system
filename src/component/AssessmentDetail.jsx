@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import ScoreDetail from "./ScoreDetail";
 
 const Assessment = [
   {
@@ -46,7 +47,7 @@ export default function AssessmentDetail() {
   //   const [tabActive, setTabActive] = useState(0)
 
   return (
-    <div>
+    <div className=" mr-2">
       {Array.from({ length: totalAssessment }, (_, i) => (
         <Tab num={i} key={i} activeTab={tabNum} onClick={setTabNum}>
           Month-{i + 1}
@@ -65,9 +66,7 @@ function Tab({ onClick, num, activeTab, children }) {
   return (
     <button
       onClick={() => onClick(num)}
-      className={` ${
-        num === activeTab && "bg-blue-600"
-      }  bg-blue-100 rounded-md px-4`}
+      className={` ${num === activeTab && "bg-white"}  bg-slate-300 px-4`}
     >
       {children}
     </button>
@@ -77,46 +76,64 @@ function Tab({ onClick, num, activeTab, children }) {
 function TabbedContent({ num, Assessment }) {
   const item = Assessment.at(num);
   return (
-    <div>
+    <div className="bg-white px-4 py-2">
       <div>
         <h1>General Performance</h1>
-        <p>
-          Problem Solving <span>{item.GenPerformance.problemSolving}/10</span>
-        </p>
-        <p>
-          Innovation <span>{item.GenPerformance.Innovation}/10</span>
-        </p>
-        <p>
-          Quality Work <span>{item.GenPerformance.QualityWork}/10</span>
-        </p>
-        <p>
-          Timeliness <span>{item.GenPerformance.Timeliness}/10</span>
-        </p>
+        <div className="p-4">
+          <ScoreDetail
+            label="Problem Solving"
+            grade={item.GenPerformance.problemSolving}
+          />
+          <ScoreDetail
+            label="Innovation"
+            grade={item.GenPerformance.Innovation}
+          />
+          <ScoreDetail
+            label="Quality Work"
+            grade={item.GenPerformance.QualityWork}
+          />
+          <ScoreDetail
+            label="Timeliness"
+            grade={item.GenPerformance.Timeliness}
+          />
+        </div>
       </div>
       <div>
         <h1>Proffessionalism</h1>
-        <p>
-          Attendance <span>{item.Proffessionalism.Attendance}/10</span>
-        </p>
-        <p>
-          Adaptability <span>{item.Proffessionalism.Adaptability}/10</span>
-        </p>
-        <p>
-          ProfessionalConduct{" "}
-          <span>{item.Proffessionalism.ProffessionalConduct}/10</span>
-        </p>
+        <div className="p-4">
+          <ScoreDetail
+            label="Attendance"
+            grade={item.Proffessionalism.Attendance}
+          />
+          <ScoreDetail
+            label="Adaptability"
+            grade={item.Proffessionalism.ProffessionalConduct}
+          />
+          <ScoreDetail
+            label="ProfessionalConduct"
+            grade={item.Proffessionalism.Adaptability}
+          />
+        </div>
       </div>
       <div>
         <h1>Skill Development</h1>
-        <p>
-          Technical Skills:{" "}
-          <span>{item.SkillDevelopment.TechnicalSkills}/10</span>
-        </p>
-        <p>
-          Soft Skills <span>{item.SkillDevelopment.SoftSkills}/10</span>
-        </p>
+        <div className="p-4">
+          <p>
+            Technical Skills:
+            <li>Computer repaire</li>
+            <li>Cripping Cable</li>
+          </p>
+          <p>
+            Soft Skills:
+            <li>React.Js</li>
+            <li>Cripping Cable</li>
+          </p>
+        </div>
       </div>
-      <p>{item.Remark}</p>
+      <div>
+        <h1>Remark</h1>
+        <p className="p-4">{item.Remark}</p>
+      </div>
     </div>
   );
 }
