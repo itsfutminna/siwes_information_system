@@ -9,6 +9,7 @@ import Input from "./Input";
 import FormRow from "./FormRow";
 import Button from "./Button";
 import AssessmentList from "./AssessmentList";
+import toast from "react-hot-toast";
 
 const initialValues = {
   problemsolving: "1",
@@ -42,8 +43,12 @@ export default function AddAssessment() {
     onSubmit: (values) => handleSubmit(values),
   });
 
-  function handleSubmit(values) {
-    alert(JSON.stringify(values, null, 2));
+  function handleSubmit() {
+    // alert(JSON.stringify(values, null, 2));
+    toast.success("Assessment submitted successfully!", {
+      position: "top-center",
+      duration: 3000,
+    });
     // formik.resetForm();
   }
 

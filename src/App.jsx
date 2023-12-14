@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import Biodata from "./pages/Biodata";
 import Assesment from "./pages/Assesment";
 import StudentProfile from "./pages/StudentProfile";
+import { Toaster } from "react-hot-toast";
+// import "react-hot-toast/dist/index.css";
 export default function App() {
   return (
     <BrowserRouter>
@@ -19,6 +21,7 @@ export default function App() {
           <Route path="assesment/profile" element={<StudentProfile />} />
         </Route>
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }

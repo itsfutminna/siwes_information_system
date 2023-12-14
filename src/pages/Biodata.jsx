@@ -5,6 +5,7 @@ import Input from "../component/Input";
 import Form from "../component/Form";
 import Button from "../component/Button";
 import Select from "../component/Select";
+import { toast } from "react-hot-toast";
 
 export default function Biodata() {
   const initialValues = {
@@ -35,9 +36,13 @@ export default function Biodata() {
     onSubmit: (values) => handleSubmit(values),
   });
 
-  function handleSubmit(values) {
-    alert(JSON.stringify(values, null, 2));
-    formik.resetForm();
+  function handleSubmit() {
+    // alert(JSON.stringify(values, null, 2));
+    // formik.resetForm();
+    toast.success("Form submitted successfully!", {
+      position: "top-center",
+      duration: 3000,
+    });
   }
   return (
     <div className="flex items-center  h-full p-8">
