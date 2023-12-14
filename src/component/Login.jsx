@@ -12,8 +12,8 @@ export default function Login() {
   const initialValues = { username: "", password: "" };
 
   let userSchema = object({
-    username: string().required("This filed cannot be empty"),
-    password: string().required("This filed cannot be empty"),
+    username: string().required("Filed cannot be empty"),
+    password: string().required("Filed cannot be empty"),
   });
 
   const formik = useFormik({

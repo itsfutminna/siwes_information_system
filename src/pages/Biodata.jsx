@@ -19,14 +19,14 @@ export default function Biodata() {
   };
 
   let studentSchema = object({
-    firstname: string().required("filed cannot be empty"),
-    middlename: string().required("filed cannot be empty"),
-    lastname: string().required("filed cannot be empty"),
-    sex: string().required("filed cannot be empty"),
-    department: string().required("filed cannot be empty"),
-    startdate: string().required("filed cannot be empty"),
-    enddate: string().required("filed cannot be empty"),
-    institution: string().required("filed cannot be empty"),
+    firstname: string().required("Field cannot be empty"),
+    middlename: string().required("Field cannot be empty"),
+    lastname: string().required("Field cannot be empty"),
+    sex: string().required("Field cannot be empty"),
+    department: string().required("Field cannot be empty"),
+    startdate: string().required("Field cannot be empty"),
+    enddate: string().required("Field cannot be empty"),
+    institution: string().required("Field cannot be empty"),
   });
 
   const formik = useFormik({
@@ -150,7 +150,9 @@ export default function Biodata() {
             value={formik.values.institution}
           />
         </FormRow>
-        <Button>Register</Button>
+        <Button className="col-span-2" type="others">
+          Register
+        </Button>
       </Form>
     </div>
   );

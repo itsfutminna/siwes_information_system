@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Accordion from "../component/Accordion";
+
 import AssessmentDetail from "../component/AssessmentDetail";
 import Button from "../component/Button";
+import AddAssessment from "../component/AddAssessment";
 
 export default function StudentProfile() {
   const [assess, setAssess] = useState(false);
@@ -27,7 +28,7 @@ export default function StudentProfile() {
         <Button type="others" onClick={() => setAssess((assess) => !assess)}>
           Add Assessment
         </Button>
-        {assess && <Accordion />}
+        {assess && <AddAssessment />}
       </div>
     </div>
   );
