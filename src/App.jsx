@@ -7,6 +7,7 @@ import Biodata from "./pages/Biodata";
 import Assesment from "./pages/Assesment";
 import StudentProfile from "./pages/StudentProfile";
 import SignUp from "./pages/SignUp";
+import AboutUs from "./pages/AboutUs";
 export default function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,8 @@ export default function App() {
           <Route path="assesment/profile" element={<StudentProfile />} />
         </Route>
         <Route path="signup" element={<SignUp/>}/>
+        <Route path="aboutus" element={<AboutUs/>}/>
+
       </Routes>
     </BrowserRouter>
   );

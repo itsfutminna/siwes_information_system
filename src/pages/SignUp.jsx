@@ -26,7 +26,7 @@ const SignUp = () => {
   });
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-futcolor">
+    <div className="min-h-screen flex items-center justify-center bg-Futpurple">
       <div className="bg-white  p-8 rounded shadow-md w-96">
         <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
         <form onSubmit={formik.handleSubmit}>
@@ -97,7 +97,7 @@ const SignUp = () => {
           <div>
             <button
               type="submit"
-              className="w-full bg-futcolor text-white py-2 px-4 rounded-md font-medium"
+              className="w-full bg-Futpurple text-white py-2 px-4 rounded-md font-medium"
             >
               Sign Up
             </button>
