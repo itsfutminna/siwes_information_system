@@ -49,13 +49,13 @@ export default function TabContent({ num, Assessment }) {
           <div>
             <p className="font-semibold ">Technical Skills:</p>
             <li>Computer repaire</li>
-            <li>Cripping Cable</li>
+            <li>Netork Cable Crimping</li>
           </div>
           <div>
             <p className="font-semibold ">Soft Skills:</p>
 
             <li>React.Js</li>
-            <li>Cripping Cable</li>
+            <li> Network Cable Crimping</li>
           </div>
         </div>
       </div>
