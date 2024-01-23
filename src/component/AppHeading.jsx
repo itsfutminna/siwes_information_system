@@ -1,5 +1,5 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../assets/logo1.png";
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 export default function AppHeading() {
   const navigate = useNavigate();
   function handleLogout() {
@@ -8,9 +8,7 @@ export default function AppHeading() {
 
   return (
     <div className="flex items-center justify-between bg-Newpurple  h-16 px-8 border-b-4 border-slate-950">
-      <NavLink to="/">
-        <img src={logo} alt="FUT-logo" className="max-w-[7rem]" />
-      </NavLink>
+      <img src={logo} alt="FUT-logo" className="max-w-[12rem]" />
       <div className="flex items-center gap-2">
         <img
           src="/happy.jpg"

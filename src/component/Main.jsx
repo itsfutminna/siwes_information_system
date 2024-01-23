@@ -6,7 +6,8 @@ export default function Main() {
     <main className="bg-white flex-col">
       {/* section 1 */}
       <div className=" py-20 h-screen  bg-slate-500">
-        <div className=" items-center justify-center w-10/12 mx-auto gap-4 md:flex ">
+        {/* items-center justify-center w-10/12 mx-auto gap-4 md:flex */}
+        <div className="justify-center w-10/12 mx-auto gap-4 md:flex">
           {/* heading */}
           <div className="text-slate-100 font-bold basis-1/2 text-center md:text-start ">
             <p className="text-4xl">
@@ -35,7 +36,7 @@ export default function Main() {
               <img
                 src={profile.image}
                 alt="picture"
-                className="aspect-square h-22"
+                className="aspect-square h-22 rounded-full"
               />
               <p>{profile.name}</p>
               <p>{profile.office}</p>

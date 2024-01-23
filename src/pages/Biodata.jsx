@@ -5,6 +5,7 @@ import Input from "../component/Input";
 import Form from "../component/Form";
 import Button from "../component/Button";
 import Select from "../component/Select";
+import { toast } from "react-hot-toast";
 
 export default function Biodata() {
   const initialValues = {
@@ -19,14 +20,14 @@ export default function Biodata() {
   };
 
   let studentSchema = object({
-    firstname: string().required("filed cannot be empty"),
-    middlename: string().required("filed cannot be empty"),
-    lastname: string().required("filed cannot be empty"),
-    sex: string().required("filed cannot be empty"),
-    department: string().required("filed cannot be empty"),
-    startdate: string().required("filed cannot be empty"),
-    enddate: string().required("filed cannot be empty"),
-    institution: string().required("filed cannot be empty"),
+    firstname: string().required("Field cannot be empty"),
+    middlename: string().required("Field cannot be empty"),
+    lastname: string().required("Field cannot be empty"),
+    sex: string().required("Field cannot be empty"),
+    department: string().required("Field cannot be empty"),
+    startdate: string().required("Field cannot be empty"),
+    enddate: string().required("Field cannot be empty"),
+    institution: string().required("Field cannot be empty"),
   });
 
   const formik = useFormik({
@@ -35,9 +36,13 @@ export default function Biodata() {
     onSubmit: (values) => handleSubmit(values),
   });
 
-  function handleSubmit(values) {
-    alert(JSON.stringify(values, null, 2));
-    formik.resetForm();
+  function handleSubmit() {
+    // alert(JSON.stringify(values, null, 2));
+    // formik.resetForm();
+    toast.success("Form submitted successfully!", {
+      position: "top-center",
+      duration: 3000,
+    });
   }
   return (
     <div className="flex items-center  h-full p-8">
@@ -150,7 +155,9 @@ export default function Biodata() {
             value={formik.values.institution}
           />
         </FormRow>
-        <Button>Register</Button>
+        <Button className="col-span-2" type="others">
+          Register
+        </Button>
       </Form>
     </div>
   );

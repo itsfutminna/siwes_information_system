@@ -6,7 +6,9 @@ export default function FormRow({ label, error, children }) {
         {label && <label htmlFor={children.props.id}>{label}</label>}
         {children}
       </div>
-      {error && <p className="text-sm text-red-300 font-semibold">{error}</p>}
+      <p className="text-sm text-red-800 font-semibold h-5 py-1">
+        {error ? error : null}
+      </p>
     </div>
   );
 }

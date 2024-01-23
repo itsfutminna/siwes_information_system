@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function AccordionList({
+export default function AssessmentList({
   title,
   id,
   children,

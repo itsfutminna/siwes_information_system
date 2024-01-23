@@ -1,12 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 export default function Student(key) {
-  const navigate = useNavigate();
-
-  function handleAssesment() {
-    console.log("working");
-    navigate("profile");
-  }
   return (
     <div
       key={key}
@@ -27,12 +20,7 @@ export default function Student(key) {
         <NavLink to="profile" className="bg-PrimaryColor px-2 rounded-lg">
           Assessment
         </NavLink>
-        <button
-          onClick={() => handleAssesment()}
-          className="bg-PrimaryColor px-2 rounded-lg"
-        >
-          Update
-        </button>
+        <button className="bg-PrimaryColor px-2 rounded-lg">Update</button>
       </div>
     </div>
   );

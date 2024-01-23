@@ -4,10 +4,12 @@ import { useState } from "react";
 import Score from "./Score";
 import { object, string } from "yup";
 import { useFormik } from "formik";
-import Range from "../component/Range";
-import Input from "../component/Input";
+import Range from "./Range";
+import Input from "./Input";
 import FormRow from "./FormRow";
-import AccordionList from "./AccordionList";
+import Button from "./Button";
+import AssessmentList from "./AssessmentList";
+import toast from "react-hot-toast";
 
 const initialValues = {
   problemsolving: "1",
@@ -21,7 +23,7 @@ const initialValues = {
   softskills: "",
   remark: "",
 };
-export default function Accordion() {
+export default function AddAssessment() {
   let studentSchema = object({
     problemsolving: string().required(),
     innovation: string().required(),
@@ -41,8 +43,12 @@ export default function Accordion() {
     onSubmit: (values) => handleSubmit(values),
   });
 
-  function handleSubmit(values) {
-    alert(JSON.stringify(values, null, 2));
+  function handleSubmit() {
+    // alert(JSON.stringify(values, null, 2));
+    toast.success("Assessment submitted successfully!", {
+      position: "top-center",
+      duration: 3000,
+    });
     // formik.resetForm();
   }
 
@@ -52,8 +58,8 @@ export default function Accordion() {
     setCurrentlyOpen(id === currentlyOpen ? null : id);
   }
   return (
-    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
-      <AccordionList
+    <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4  mr-2">
+      <AssessmentList
         title="General Performance"
         id={0}
         key={0}
@@ -96,8 +102,8 @@ export default function Accordion() {
             value={formik.values.timeliness}
           />
         </Score>
-      </AccordionList>
-      <AccordionList
+      </AssessmentList>
+      <AssessmentList
         title="Proffessionalism and Work Ethics"
         id={1}
         key={1}
@@ -137,8 +143,8 @@ export default function Accordion() {
             value={formik.values.proffessionalconduct}
           />
         </Score>
-      </AccordionList>
-      <AccordionList
+      </AssessmentList>
+      <AssessmentList
         title="Skills Development"
         id={2}
         key={2}
@@ -175,27 +181,28 @@ export default function Accordion() {
             value={formik.values.softskills}
           />
         </FormRow>
-      </AccordionList>
-      <AccordionList
+      </AssessmentList>
+      <AssessmentList
         title="Remark"
         id={3}
         key={3}
         currentlyOpen={currentlyOpen}
         onClick={() => handleToggle(3)}
       >
-        <Input
+        <textarea
+          className="w-1/2 h-44 p-2 shadow-lg"
           type="text"
-          placeholder="Remark"
+          placeholder="Enter remark"
           id="remark"
           name="remark"
           onChange={formik.handleChange}
           value={formik.values.remark}
         />
-      </AccordionList>
+      </AssessmentList>
 
-      <button className="bg-Futpurple col-span-2 w-1/3 mx-auto mt-8 text-slate-50 rounded-lg py-1">
+      <Button type="others" className=" col-span-2 w-1/3 mx-auto">
         Submit
-      </button>
+      </Button>
     </form>
   );
 }
